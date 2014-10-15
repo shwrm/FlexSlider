@@ -837,7 +837,7 @@
           }());
 
       if (slider.transitions) {
-        target = (vertical) ? "translate3d(0," + target + ",0)" : "translate3d(" + target + ",0,0)";
+        target = (vertical) ? "translate(0," + target + ")" : "translate(" + target + ",0)";
         dur = (dur !== undefined) ? (dur/1000) + "s" : "0s";
         slider.container.css("-" + slider.pfx + "-transition-duration", dur);
          slider.container.css("transition-duration", dur);
