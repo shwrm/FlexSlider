@@ -138,7 +138,7 @@
         if (asNav) methods.asNav.setup();
 
         // TOUCH
-        if (touch && slider.vars.touch) methods.touch();
+        if (touch && slider.vars.touch && (slider.count > 1)) methods.touch();
 
         // FADE&&SMOOTHHEIGHT || SLIDE:
         if (!fade || (fade && slider.vars.smoothHeight)) $(window).bind("resize orientationchange focus", methods.resize);
