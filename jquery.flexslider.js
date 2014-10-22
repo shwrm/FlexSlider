@@ -1045,6 +1045,10 @@
       slider.vars.removed(slider);
     };
 
+    slider.resize = function() {
+      methods.resize();
+    }
+
     //FlexSlider: Initialize
     methods.init();
   };
