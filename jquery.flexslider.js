@@ -401,6 +401,11 @@
             el.addEventListener('touchstart', onTouchStart, false);
 
             function onTouchStart(e) {
+              // If Flexslider has been destroyed, remove event listener and exit
+              if (!slider.data('flexslider')) {
+                el.removeEventListener('touchstart', onTouchStart, false);
+                return;
+              }
               if (slider.animating) {
                 e.preventDefault();
               } else if ( ( window.navigator.msPointerEnabled ) || e.touches.length === 1 ) {
@@ -428,6 +433,11 @@
             }
 
             function onTouchMove(e) {
+              // If Flexslider has been destroyed, remove event listener and exit
+              if (!slider.data('flexslider')) {
+                el.removeEventListener('touchmove', onTouchMove, false);
+                return;
+              }
               // Local vars for X and Y points.
 
               localX = e.touches[0].pageX;
@@ -450,6 +460,11 @@
             }
 
             function onTouchEnd(e) {
+              // If Flexslider has been destroyed, remove event listener and exit
+              if (!slider.data('flexslider')) {
+                el.removeEventListener('touchend', onTouchEnd, false);
+                return;
+              }
               // finish the touch by undoing the touch session
               el.removeEventListener('touchmove', onTouchMove, false);
 
@@ -480,6 +495,11 @@
             el.addEventListener("MSGestureEnd", onMSGestureEnd, false);
 
             function onMSPointerDown(e){
+                // If Flexslider has been destroyed, remove event listener and exit
+                if (!slider.data('flexslider')) {
+                  el.removeEventListener('MSPointerDown', onMSPointerDown, false);
+                  return;
+                }
                 e.stopPropagation();
                 if (slider.animating) {
                     e.preventDefault();
@@ -500,6 +520,11 @@
             }
 
             function onMSGestureChange(e) {
+                // If Flexslider has been destroyed, remove event listener and exit
+                if (!slider.data('flexslider')) {
+                  el.removeEventListener('MSGestureChange', onMSGestureChange, false);
+                  return;
+                }
                 e.stopPropagation();
                 var slider = e.target._slider;
                 if(!slider){
@@ -533,6 +558,11 @@
             }
 
             function onMSGestureEnd(e) {
+                // If Flexslider has been destroyed, remove event listener and exit
+                if (!slider.data('flexslider')) {
+                  el.removeEventListener('MSGestureEnd', onMSGestureEnd, false);
+                  return;
+                }
                 e.stopPropagation();
                 var slider = e.target._slider;
                 if(!slider){
