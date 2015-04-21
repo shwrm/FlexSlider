@@ -1206,7 +1206,7 @@
         case "next": $slider.flexAnimate($slider.getTarget("next"), true); break;
         case "prev":
         case "previous": $slider.flexAnimate($slider.getTarget("prev"), true); break;
-	    case "destroy": $slider.destroy(); break;
+        case "destroy": $slider.destroy(); break;
         default: if (typeof options === "number") $slider.flexAnimate(options, true);
       }
     }
