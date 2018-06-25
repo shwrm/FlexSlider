@@ -402,7 +402,7 @@
 
             function onTouchStart(e) {
               // If Flexslider has been destroyed, remove event listener and exit
-              if (!slider.data('flexslider')) {
+              if (slider && !slider.data('flexslider')) {
                 el.removeEventListener('touchstart', onTouchStart, false);
                 return;
               }
@@ -434,7 +434,7 @@
 
             function onTouchMove(e) {
               // If Flexslider has been destroyed, remove event listener and exit
-              if (!slider.data('flexslider')) {
+              if (slider && !slider.data('flexslider')) {
                 el.removeEventListener('touchmove', onTouchMove, false);
                 return;
               }
@@ -461,7 +461,7 @@
 
             function onTouchEnd(e) {
               // If Flexslider has been destroyed, remove event listener and exit
-              if (!slider.data('flexslider')) {
+              if (slider && !slider.data('flexslider')) {
                 el.removeEventListener('touchend', onTouchEnd, false);
                 return;
               }
@@ -496,7 +496,7 @@
 
             function onMSPointerDown(e){
                 // If Flexslider has been destroyed, remove event listener and exit
-                if (!slider.data('flexslider')) {
+                if (slider && !slider.data('flexslider')) {
                   el.removeEventListener('MSPointerDown', onMSPointerDown, false);
                   return;
                 }
@@ -521,7 +521,7 @@
 
             function onMSGestureChange(e) {
                 // If Flexslider has been destroyed, remove event listener and exit
-                if (!slider.data('flexslider')) {
+                if (slider && !slider.data('flexslider')) {
                   el.removeEventListener('MSGestureChange', onMSGestureChange, false);
                   return;
                 }
@@ -559,7 +559,7 @@
 
             function onMSGestureEnd(e) {
                 // If Flexslider has been destroyed, remove event listener and exit
-                if (!slider.data('flexslider')) {
+                if (slider && !slider.data('flexslider')) {
                   el.removeEventListener('MSGestureEnd', onMSGestureEnd, false);
                   return;
                 }
